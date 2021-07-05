@@ -23,11 +23,13 @@ from __future__ import division
 from __future__ import print_function
 
 import enum
-import tensorflow as tf
+from typing import Tuple, Union
 
+import tensorflow as tf
 from tensorflow_graphics.util import asserts
 from tensorflow_graphics.util import export_api
 from tensorflow_graphics.util import shape
+from tensorflow_graphics.util import type_alias
 
 
 class Degree(enum.IntEnum):
@@ -96,12 +98,13 @@ def _quartic(position):
       axis=-1)
 
 
-def knot_weights(positions,
-                 num_knots,
-                 degree,
-                 cyclical,
-                 sparse_mode=False,
-                 name="bspline_knot_weights"):
+def knot_weights(positions: type_alias.TensorLike,
+                 num_knots: type_alias.TensorLike,
+                 degree: int,
+                 cyclical: bool,
+                 sparse_mode: bool = False,
+                 name: str = "bspline_knot_weights"
+                 ) -> Union[tf.Tensor, Tuple[tf.Tensor, tf.Tensor]]:
   """Function that converts cardinal B-spline positions to knot weights.
 
   Note:
@@ -209,9 +212,10 @@ def knot_weights(positions,
     return tf.reshape(weights, shape=shape_weights)
 
 
-def interpolate_with_weights(knots,
-                             weights,
-                             name="bspline_interpolate_with_weights"):
+def interpolate_with_weights(knots: type_alias.TensorLike,
+                             weights: type_alias.TensorLike,
+                             name: str = "bspline_interpolate_with_weights"
+                             ) -> tf.Tensor:
   """Interpolates knots using knot weights.
 
   Note:
@@ -241,7 +245,11 @@ def interpolate_with_weights(knots,
   return tf.tensordot(weights, knots, (-1, -1))
 
 
-def interpolate(knots, positions, degree, cyclical, name="bspline_interpolate"):
+def interpolate(knots: type_alias.TensorLike,
+                positions: type_alias.TensorLike,
+                degree: int,
+                cyclical: bool,
+                name: str = "bspline_interpolate") -> tf.Tensor:
   """Applies B-spline interpolation to input control points (knots).
 
   Note:
