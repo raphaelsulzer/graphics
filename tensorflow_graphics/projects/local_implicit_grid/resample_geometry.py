@@ -19,7 +19,8 @@ import os
 from absl import app
 from absl import flags
 import numpy as np
-from tensorflow_graphics.projects.local_implicit_grid.core import point_utils as pu
+# from tensorflow_graphics.projects.local_implicit_grid.core import point_utils as pu
+from core import point_utils as pu
 import trimesh
 
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'

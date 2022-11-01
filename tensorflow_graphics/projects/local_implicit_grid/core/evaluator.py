@@ -24,11 +24,14 @@ import numpy as np
 import tensorflow.compat.v1 as tf
 from tensorflow.compat.v1.io import gfile
 
-from tensorflow_graphics.projects.local_implicit_grid.core import implicit_nets as im
-from tensorflow_graphics.projects.local_implicit_grid.core import local_implicit_grid_layer as lig
-from tensorflow_graphics.projects.local_implicit_grid.core import model_g2g as g2g
-from tensorflow_graphics.projects.local_implicit_grid.core import model_g2v as g2v
-
+# from tensorflow_graphics.projects.local_implicit_grid.core import implicit_nets as im
+# from tensorflow_graphics.projects.local_implicit_grid.core import local_implicit_grid_layer as lig
+# from tensorflow_graphics.projects.local_implicit_grid.core import model_g2g as g2g
+# from tensorflow_graphics.projects.local_implicit_grid.core import model_g2v as g2v
+from core import implicit_nets as im
+from core import local_implicit_grid_layer as lig
+from core import model_g2g as g2g
+from core import model_g2v as g2v
 
 tf.logging.set_verbosity(tf.logging.ERROR)
 

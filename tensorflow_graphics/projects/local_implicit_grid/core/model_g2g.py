@@ -17,7 +17,8 @@
 import math
 import tensorflow.compat.v1 as tf
 
-from tensorflow_graphics.projects.local_implicit_grid.core import local_implicit_grid_layer as lig
+# from tensorflow_graphics.projects.local_implicit_grid.core import local_implicit_grid_layer as lig
+from core import local_implicit_grid_layer as lig
 
 layers = tf.keras.layers
 

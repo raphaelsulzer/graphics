@@ -20,10 +20,12 @@ import numpy as np
 from skimage import measure
 import tensorflow.compat.v1 as tf
 
-from tensorflow_graphics.projects.local_implicit_grid.core import evaluator
-from tensorflow_graphics.projects.local_implicit_grid.core import local_implicit_grid_layer as lig
-from tensorflow_graphics.projects.local_implicit_grid.core import point_utils as pt
-
+# from tensorflow_graphics.projects.local_implicit_grid.core import evaluator
+# from tensorflow_graphics.projects.local_implicit_grid.core import local_implicit_grid_layer as lig
+# from tensorflow_graphics.projects.local_implicit_grid.core import point_utils as pt
+from core import evaluator
+from core import local_implicit_grid_layer as lig
+from core import point_utils as pt
 
 class LIGOptimizer(object):
   """Class for using optimization to acquire feature grid."""

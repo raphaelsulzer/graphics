@@ -17,8 +17,10 @@
 
 import tensorflow.compat.v1 as tf
 
-from tensorflow_graphics.projects.local_implicit_grid.core import implicit_nets
-from tensorflow_graphics.projects.local_implicit_grid.core import regular_grid_interpolation
+# from tensorflow_graphics.projects.local_implicit_grid.core import implicit_nets
+# from tensorflow_graphics.projects.local_implicit_grid.core import regular_grid_interpolation
+from core import implicit_nets
+from core import regular_grid_interpolation
 
 layers = tf.keras.layers
 
